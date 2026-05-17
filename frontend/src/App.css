@@ -35,3 +35,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+/* Fix input text color on production */
+input, select, textarea {
+  color: white !important;
+  background-color: #0A0A0A !important;
+}
