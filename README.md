@@ -200,3 +200,4 @@ The app will open at `http://localhost:3000`.
 ## License
 
 MIT — free to use, modify, and distribute with attribution.
+Note: Backend is on Render free tier — first load may take 30-60 seconds to wake up. Please wait before testing.
