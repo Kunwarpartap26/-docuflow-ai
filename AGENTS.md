@@ -1,11 +1,5 @@
 # AGENTS.md — AI Workflow Documentation
 
-## Project: DocuFlow AI
-**Assignment:** BiztelAI Full Stack Engineering Internship  
-**Submission Date:** May 2026
-
----
-
 ## AI Tools Used
 
 ### 1. Claude (Anthropic) — Primary Development Agent
