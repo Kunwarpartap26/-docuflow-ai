@@ -3,7 +3,7 @@
 > AI-powered manufacturing document digitization — extract structured data from handwritten production sheets in seconds.
 
 ![DocuFlow AI Screenshot](./docs/screenshot.png)
-_← Replace with your own screenshot after running locally_
+
 
 ---
 
