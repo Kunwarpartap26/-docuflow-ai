@@ -107,8 +107,8 @@ export default function History() {
   const navigate = useNavigate();
 
   const [docs, setDocs]           = useState([]);
-  const [total, setTotal]         = useState(0);
-  const [page, setPage]           = useState(0);
+  const [total, setTotal]         = useState(1);
+  const [page, setPage] = useState(1);
   const [loading, setLoading]     = useState(true);
   const [error, setError]         = useState(null);
 
@@ -126,14 +126,14 @@ export default function History() {
     clearTimeout(debounceTimer.current);
     debounceTimer.current = setTimeout(() => {
       setDebouncedQuery(val);
-      setPage(0);
+      setPage(1);
     }, 300);
   };
 
   const clearQuery = () => {
     setQuery('');
     setDebouncedQuery('');
-    setPage(0);
+    setPage(1);
   };
 
   // ── Fetch docs ───────────────────────────────────────────────────────────
@@ -233,7 +233,7 @@ export default function History() {
                   data-testid={`filter-chip-${f.label}`}
                   onClick={() => {
                     setActiveFilter(f.value);
-                    setPage(0);
+                    setPage(1);
                   }}
                   className={`
                     flex-shrink-0 px-3 py-1.5 text-xs font-medium uppercase tracking-wide transition-colors
@@ -452,20 +452,20 @@ export default function History() {
                   <div className="flex gap-2">
                     <button
                       data-testid="pagination-prev"
-                      onClick={() => setPage((p) => Math.max(0, p - 1))}
-                      disabled={page === 0}
+                      onClick={() => setPage((p) => Math.max(1, p - 1))}
+                      disabled={page === 1}
                       className="px-4 py-1.5 text-xs font-medium bg-zinc-800 text-zinc-400 disabled:opacity-30 hover:bg-zinc-700 hover:text-white transition-colors"
                       style={{ borderRadius: '2px' }}
                     >
                       Previous
                     </button>
                     <span className="flex items-center px-3 text-xs text-zinc-600">
-                      {page + 1} / {totalPages}
+                      {page} / {totalPages}
                     </span>
                     <button
                       data-testid="pagination-next"
-                      onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-                      disabled={page >= totalPages - 1}
+                      onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                      disabled={page >= totalPages}
                       className="px-4 py-1.5 text-xs font-medium bg-zinc-800 text-zinc-400 disabled:opacity-30 hover:bg-zinc-700 hover:text-white transition-colors"
                       style={{ borderRadius: '2px' }}
                     >

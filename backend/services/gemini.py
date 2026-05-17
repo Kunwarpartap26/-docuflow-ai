@@ -71,7 +71,7 @@ async def extract_fields_from_image(image_path: str, file_type: str) -> list:
 
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.0-flash')
 
         with open(image_path, "rb") as f:
             image_data = f.read()
